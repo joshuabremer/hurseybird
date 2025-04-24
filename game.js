@@ -4,30 +4,38 @@
 // General settings
 
 /**
- * @type {number} Gravity affecting the bird
+ * @type {7} Gravity affecting the bird
  */
-const gravity = 5;
+const gravity = 2;
 
 /**
- * @type {number} Speed of the game
+ * @type {1} Speed of the game
  */
-const speed = 6;
+const speed = 4;
 
 /**
  * @type {number} Height of the bird's jump
  */
-const jumpHeight = 12;
+const jumpHeight = 5.2;
 
-/**
+/**–
  * @type {number} Gap between the pipes
  */
-const pipeGap = 350;
-
+const pipeGap = 310;
 /**
- * @type {number} Selected teacher (1-8)
+ * @type {2} Selected teacher (1-8)
+ * Pick a teacher!π
+ * 1: mr. newberry
+ * 2: ms. lizzy
+ * 3: dr. schavel
+ * 4: mr. martin
+ * 5: ms. moritz
+ * 6: ms. torres
+ * 7: ms. white
+ * 8: nurse brooke
  */
-const teacher = 8;
 
+const teacher = 3;
 /**
  * Want to see the rest of the code? Scroll down to the see!
  * Hursey Bird Code
