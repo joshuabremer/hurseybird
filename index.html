@@ -57,6 +57,7 @@
           border: none;
           border-radius: 5px;
           cursor: pointer;
+          visibility: hidden;
         "
       >
         Mute
@@ -93,10 +94,34 @@
     </script>
 
     <script src="./game.js?v=1"></script>
+
     <script>
-      // JavaScript to handle mute/unmute functionality
+      // JavaScript to handle mute/unmute functionality and autoplay after interaction
       const audio = document.getElementById("background-audio");
       const muteButton = document.getElementById("mute-button");
+
+      // Initially hide the mute button
+      muteButton.style.visibility = "hidden";
+
+      // Enable audio playback after user interaction
+      function enableAudioPlayback() {
+        audio
+          .play()
+          .then(() => {
+            // Show the mute button once audio is enabled
+            muteButton.style.visibility = "visible";
+          })
+          .catch((error) => {
+            console.warn("Autoplay blocked. Waiting for user interaction.");
+          });
+
+        // Remove event listeners after audio is enabled
+        document.removeEventListener("click", enableAudioPlayback);
+        document.removeEventListener("keydown", enableAudioPlayback);
+      }
+
+      document.addEventListener("click", enableAudioPlayback);
+      document.addEventListener("keydown", enableAudioPlayback);
 
       muteButton.addEventListener("click", () => {
         if (audio.paused) {
