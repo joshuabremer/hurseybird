@@ -76,7 +76,7 @@ if (!ctx) throw new Error("Context not found");
 
 /** @type {HTMLImageElement} */
 const img = new Image();
-img.src = "https://i.ibb.co/Q9yv5Jk/flappy-bird-set.png";
+img.src = "./img/flappy-bird-set.png";
 
 /** @type {HTMLImageElement} */
 const bird = new Image();

@@ -11,7 +11,7 @@ header {
   width: 431px;
 }
 h1 {
-  background: url("/img/flappy-bird-set.png") 0% 340px;
+  background: url("./img/flappy-bird-set.png") 0% 340px;
   padding: 1.2rem 0;
   margin: 0;
 }
