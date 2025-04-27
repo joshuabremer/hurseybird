@@ -1,11 +1,17 @@
 let watching = new Set();
-watch(location.href);
 
-new PerformanceObserver((list) => {
-  for (const entry of list.getEntries()) {
-    watch(entry.name);
-  }
-}).observe({ type: "resource", buffered: true });
+if (
+  window.location.hostname === "localhost" ||
+  window.location.hostname.includes("127.0.0.1")
+) {
+  watch(location.href);
+
+  new PerformanceObserver((list) => {
+    for (const entry of list.getEntries()) {
+      watch(entry.name);
+    }
+  }).observe({ type: "resource", buffered: true });
+}
 
 function watch(urlString) {
   if (!urlString) return;

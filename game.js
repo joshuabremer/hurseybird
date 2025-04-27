@@ -1,41 +1,45 @@
 // @ts-check
 
-// Hursey Bird
+// Hursey Birdw
 // General settings
 
 /**
- * @type {7} Gravity affecting the bird
+ * @type {number} Gravity affecting the bird
  */
 const gravity = 2;
 
 /**
- * @type {1} Speed of the game
+ * @type {number} Speed of the game
+ *
  */
-const speed = 4;
+const speed = 2;
 
 /**
  * @type {number} Height of the bird's jump
  */
-const jumpHeight = 5.2;
+const jumpHeight = 6;
 
-/**–
+/**
  * @type {number} Gap between the pipes
  */
-const pipeGap = 310;
+const pipeGap = 400;
+
 /**
- * @type {2} Selected teacher (1-8)
+ * @type {number} Selected teacher (1-8)
  * Pick a teacher!π
  * 1: mr. newberry
  * 2: ms. lizzy
  * 3: dr. schavel
  * 4: mr. martin
+ *
  * 5: ms. moritz
  * 6: ms. torres
  * 7: ms. white
  * 8: nurse brooke
  */
 
-const teacher = 3;
+const teacher = 12;
+
 /**
  * Want to see the rest of the code? Scroll down to the see!
  * Hursey Bird Code
@@ -94,7 +98,7 @@ const teacherMap = {
 };
 
 /** @type {number[]} */
-const birdSize = [51, 80];
+const birdSize = [51, 61];
 const teacherName = teacherMap[teacher];
 if (!teacherName) {
   throw new Error("Invalid teacher number, must be between 1 and 8");
@@ -278,11 +282,6 @@ function render() {
 
     ctx.fillText(`Best score : ${bestScore}`, 85, 245);
     ctx.fillText("Click to play", 90, 535);
-    ctx.fillText(
-      `${capitalizeFirstLetter(teacherMap[teacher])} edition`,
-      90,
-      600
-    );
     ctx.font = "bold 30px courier";
   }
 
